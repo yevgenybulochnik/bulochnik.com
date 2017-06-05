@@ -1,6 +1,12 @@
-<nav (click)='toggle_nav()' [class.nav-closed]="nav_state === 'closed'" class = 'eunav'>
-  <div (click)='eubutton_click($event)' [class.eubutton-hide]="nav_state === 'closed'" class='eubutton' *ngFor='let button of eubuttons'>{{button.link}}</div>
+<nav (click)='toggle_nav()' [class.nav-closed]='nav_state === "closed"' class = 'eunav'>
+  <div class='eubutton-wrapper' [class.eubutton-hide]="nav_state === 'closed'" *ngFor='let button of eubuttons'>
+    <div *ngIf='!button.sublink' (click)='eubutton_click($event)' class='eubutton'>{{button.link}}</div>
+    <div *ngIf='button.sublink' (click)='eubutton_click($event)' class='eubutton'>
+      {{button.link}}
+      <div *ngFor='let subutton of button.sublink' class='subbutton'>- {{subutton.link}}</div>
+    </div>
+  </div>
 </nav>
-<div [class.content-expand]="nav_state === 'closed'" class = 'content'>
+<div [class.content-expand]='nav_state === "closed"' class='content'>
   <ng-content></ng-content>
 </div>

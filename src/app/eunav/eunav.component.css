@@ -1,3 +1,8 @@
+:host(:hover) .subbutton {
+  opacity: 1;
+  height: 1.2em;
+}
+
 .eunav {
   position: fixed;
   left: 0;
@@ -5,22 +10,26 @@
   z-index: 1;
   width: 13em;
   height: 100%;
-  border-right: solid black 1px;
   background-color: white;
   padding: 13em 0 0 0;
   box-sizing: border-box;
   transition: 1s ease;
+  box-shadow: 0em 1em 2em 0em black;
 }
 
 .nav-closed {
   left: -11em;
 }
 
+.eubutton-wrapper {
+  transition: 1s;
+}
+
 .eubutton {
   font-family: impact;
   font-size: 1.5em;
-  transition: 0.5s;
   padding: 0 0 0 1.5em;
+  transition: 0.5s;
 }
 
 .eubutton:hover {
@@ -30,6 +39,18 @@
 
 .eubutton-hide {
   opacity: 0;
+}
+
+.subbutton {
+  padding: 0 0 0 1em;
+  font-size: 0.9em;
+  opacity: 0;
+  height: 0;
+  transition: 0.5s opacity, 0.5s height;
+}
+
+.subbutton:hover {
+  color: orange;
 }
 
 .content {
