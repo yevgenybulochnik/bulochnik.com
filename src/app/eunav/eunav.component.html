@@ -1,5 +1,5 @@
 <nav (click)='toggle_nav()' [class.nav-closed]="nav_state === 'closed'" class = 'eunav'>
-  <div [class.eubutton-hide]="nav_state === 'closed'" class='eubutton' *ngFor='let button of eubuttons'>{{button.link}}</div>
+  <div (click)='eubutton_click($event)' [class.eubutton-hide]="nav_state === 'closed'" class='eubutton' *ngFor='let button of eubuttons'>{{button.link}}</div>
 </nav>
 <div [class.content-expand]="nav_state === 'closed'" class = 'content'>
   <ng-content></ng-content>

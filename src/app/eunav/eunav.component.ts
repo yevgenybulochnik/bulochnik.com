@@ -26,4 +26,9 @@ export class EuNavComponent {
   toggle_nav() {
     this.nav_state = (this.nav_state === 'open' ? 'closed' : 'open');
   }
+  eubutton_click(event: any) {
+    event.stopPropagation();
+    console.log(event);
+    console.log(this);
+  }
 }
