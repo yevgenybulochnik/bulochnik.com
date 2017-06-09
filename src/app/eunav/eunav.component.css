@@ -1,4 +1,4 @@
-:host(:hover) .subbutton {
+.eunav:hover .subbutton {
   opacity: 1;
   height: 1.2em;
 }
