@@ -1,0 +1,11 @@
+.about {
+  padding: 5em;
+}
+
+.about>h1 {
+  font-family: impact;
+}
+
+.about>p {
+  max-width: 40em;
+}
