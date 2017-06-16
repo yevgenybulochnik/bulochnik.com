@@ -13,7 +13,7 @@
 .programming {
 }
 
-.programming>h1 {
+.programming>h1{
   font-family: impact;
   color: white;
   background: black;
@@ -22,5 +22,21 @@
 
 .programming>p {
   padding: 0 0 0 5em;
-  width: 40em;
+  max-width: 40em;
+}
+
+.programming>h3 {
+  font-family: arial;
+  padding: 0 0 0 5em;
+}
+
+.skillcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50em;
+}
+
+.skills {
+  padding: 1em 1.5em;
 }
