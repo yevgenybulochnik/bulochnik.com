@@ -50,3 +50,12 @@
 .icon:hover {
   height: 4.5em;
 }
+
+#ubuntu-icon {
+  height: 1.75em;
+  transition: 0.5s;
+}
+
+#ubuntu-icon:hover {
+  height: 2.5em;
+}
