@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChadsVasc, HasBled } from './risk-calc/risk-calc.provider';
 
 @Component({
   selector: 'eu-editor',

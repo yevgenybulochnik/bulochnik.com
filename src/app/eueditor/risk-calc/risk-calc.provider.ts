@@ -31,7 +31,7 @@ export class ChadsVasc {
 
 export class HasBled {
     riskcalc_name: string;
-    riskfactors: riskfactor[];
+    riskfactors: RiskFactor[];
     scores: string[];
     constructor() {
         this.riskcalc_name = 'HasBled';
@@ -66,7 +66,7 @@ class RiskFactor {
     abv: string;
     value: number;
     is_active: boolean;
-    constructor(name, abv, value) {
+    constructor(name: string, abv: string, value: number) {
         this.name = name;
         this.abv = abv;
         this.value = value;
