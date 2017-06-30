@@ -59,3 +59,14 @@
 #ubuntu-icon:hover {
   height: 2.5em;
 }
+
+.note-editor {
+  background-color: #0d3d56;
+  height: 30em;
+  color: #f0fff0;
+}
+
+.note-editor> h1 {
+  font-family: Impact;
+  padding: 1em 0 0 4em;
+}
