@@ -4,7 +4,8 @@ import { ChadsVasc, HasBled } from './risk-calc/risk-calc.provider';
 @Component({
   selector: 'eu-editor',
   templateUrl: './eueditor.component.html',
-  styleUrls: ['./eueditor.component.css']
+  styleUrls: ['./eueditor.component.css'],
+  providers: [ChadsVasc, HasBled]
 })
 
 export class EuEditorComponent {
