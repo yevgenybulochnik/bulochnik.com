@@ -61,15 +61,15 @@ export class HasBled {
     }
 }
 
-class RiskFactor {
+export class RiskFactor {
     name: string;
     abv: string;
     value: number;
-    is_active: boolean;
+    is_clicked: boolean;
     constructor(name: string, abv: string, value: number) {
         this.name = name;
         this.abv = abv;
         this.value = value;
-        this.is_active = false;
+        this.is_clicked = false;
     }
 }
