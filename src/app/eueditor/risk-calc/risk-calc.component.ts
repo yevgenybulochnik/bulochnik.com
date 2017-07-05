@@ -4,7 +4,7 @@ import { RiskFactor } from './risk-calc.provider';
 @Component({
   selector: 'risk-calc',
   template: `
-  <button (click)='gen_assessment(risk)' *ngFor='let risk of calculator.riskfactors'>
+  <button [class.active]='risk.is_clicked' (click)='gen_assessment(risk)' *ngFor='let risk of calculator.riskfactors'>
     {{risk.abv}}
     <div class='spacer'>+</div>
   </button>
@@ -12,11 +12,11 @@ import { RiskFactor } from './risk-calc.provider';
   styles: [`
     :host{
       display: flex;
+      align-items: center;
       flex-direction: column;
+      float: left;
       margin: 0.5em;
       padding: 0.7em;
-      width: 6em;
-      //border: solid grey 1px;
       box-shadow: 0em 1em 2em 0em black;
       background: white;
     }
@@ -24,10 +24,12 @@ import { RiskFactor } from './risk-calc.provider';
       display: block;
       padding: 0px;
       margin: 0.1em 0;
+      width: 6em;
       height: 1.5em;
       border: solid grey 1px;
       box-shadow: inset 0px 0px 2px 1px grey;
-      background: white
+      background: white;
+      transition: 0.5s;
     }
     button:hover {
       background: pink;
@@ -36,6 +38,10 @@ import { RiskFactor } from './risk-calc.provider';
       float: left;
       width: 1em;
       border-right: solid grey 1px;
+    }
+    .active {
+      background: red;
+      width: 7em;
     }
     `]
 })
@@ -53,6 +59,7 @@ export class RiskCalcComponent {
   }
 
   gen_assessment(risk: RiskFactor) {
+    risk.is_clicked = !risk.is_clicked
     console.log(risk)
   }
 }
