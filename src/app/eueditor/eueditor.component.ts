@@ -11,4 +11,7 @@ import { ChadsVasc, HasBled } from './risk-calc/risk-calc.provider';
 export class EuEditorComponent {
   hasbled = new HasBled;
   chadsvasc = new ChadsVasc;
+  get_assessment(evt: string) {
+    console.log(evt)
+  }
 }

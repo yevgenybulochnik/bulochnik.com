@@ -67,7 +67,7 @@ export class RiskFactor {
     value: number;
     is_clicked: boolean;
     constructor(name: string, abv: string, value: number) {
-        this.name = name;
+        this.name = ' ' + name;
         this.abv = abv;
         this.value = value;
         this.is_clicked = false;

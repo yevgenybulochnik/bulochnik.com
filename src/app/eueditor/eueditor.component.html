@@ -1,3 +1,4 @@
 <div> EuEditor Component
-  <risk-calc [calculator]='hasbled'></risk-calc>
+  <risk-calc [calculator]='hasbled' (riskassessment)='get_assessment($event)'></risk-calc>
+  <risk-calc [calculator]='chadsvasc' (riskassessment)='get_assessment($event)'></risk-calc>
 </div>

@@ -24,7 +24,7 @@ import { RiskFactor } from './risk-calc.provider';
       display: block;
       padding: 0px;
       margin: 0.1em 0;
-      width: 6em;
+      width: 7em;
       height: 1.5em;
       border: solid grey 1px;
       box-shadow: inset 0px 0px 2px 1px grey;
@@ -41,7 +41,7 @@ import { RiskFactor } from './risk-calc.provider';
     }
     .active {
       background: red;
-      width: 7em;
+      width: 8em;
     }
     `]
 })
@@ -60,6 +60,19 @@ export class RiskCalcComponent {
 
   gen_assessment(risk: RiskFactor) {
     risk.is_clicked = !risk.is_clicked
-    console.log(risk)
+    if (risk.is_clicked) {
+      this.clicked_factors.push(risk.name)
+      this.score += risk.value
+    } else {
+      let abv_index = this.clicked_factors.indexOf(risk.abv)
+      this.score -= risk.value
+      this.clicked_factors.splice(abv_index, 1)
+    }
+    this.percent = this.calculator.scores[this.score]
+    let assessment = `Patient has a ${this.calculator.riskcalc_name}= (${this.score}) for${this.clicked_factors} corresponding to a ${this.percent} annual risk.`
+    if (!this.score) {
+      assessment = ''
+    }
+    this.riskassessment.emit(assessment)
   }
 }
