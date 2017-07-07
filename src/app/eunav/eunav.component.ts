@@ -3,10 +3,12 @@ import { Component } from '@angular/core';
 class EuLink {
   link: string;
   link_path: string;
+  link_id: string;
   is_active = false;
   constructor(linkname: string) {
     this.link = linkname;
     this.link_path = '/' + linkname.toLowerCase().replace(' ', '');
+    this.link_id = '#' + linkname.toLowerCase();
   }
 }
 

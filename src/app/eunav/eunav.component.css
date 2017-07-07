@@ -25,6 +25,18 @@
   transition: 1s;
 }
 
+.eubutton-wrapper:hover {
+  background: black;
+}
+
+.eubutton-wrapper:hover .eubutton {
+  color: white;
+}
+
+.eubutton-wrapper:hover .subbutton {
+  color: white;
+}
+
 .eubutton {
   font-family: impact;
   font-size: 1.5em;
@@ -33,25 +45,21 @@
   cursor: pointer;
 }
 
-.eubutton:hover {
-    background-color: black;
-    color: white;
-}
-
 .eubutton-hide {
   opacity: 0;
 }
 
 .subbutton {
-  padding: 0 0 0 1em;
-  font-size: 0.9em;
+  font-family: impact;
+  padding: 0 0 0 3em;
+  font-size: 1.2em;
   opacity: 0;
   height: 0;
-  transition: 0.5s opacity, 0.5s height;
+  transition: 1s opacity, 0.5s height, 0.5s color;
 }
 
 .subbutton:hover {
-  color: orange;
+  color: orange !important;
 }
 
 .content {

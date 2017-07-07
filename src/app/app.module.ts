@@ -8,10 +8,13 @@ import { EuNavComponent } from './eunav/eunav.component';
 import { EuEditorComponent } from './eueditor/eueditor.component';
 import { RiskCalcComponent} from './eueditor/risk-calc/risk-calc.component';
 
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    Ng2PageScrollModule.forRoot()
   ],
   declarations: [
     AppComponent,

@@ -1,10 +1,7 @@
 <nav (click)='toggle_nav()' [class.nav-closed]='nav_state === "closed"' class = 'eunav'>
   <div class='eubutton-wrapper' [class.eubutton-hide]="nav_state === 'closed'" *ngFor='let button of eubuttons'>
-    <div *ngIf='!button.sublink' (click)='eubutton_click($event)' class='eubutton'>{{button.link}}</div>
-    <div *ngIf='button.sublink' (click)='eubutton_click($event)' class='eubutton'>
-      {{button.link}}
-      <div *ngFor='let subutton of button.sublink' class='subbutton'>- {{subutton.link}}</div>
-    </div>
+    <div pageScroll href='{{button.link_id}}' (click)='eubutton_click($event)' class='eubutton'>{{button.link}}</div>
+    <div pageScroll href='{{subbutton.link_id}}' (click)='eubutton_click($event)' class="subbutton" *ngFor='let subbutton of button.sublink'>- {{subbutton.link}}</div>
   </div>
 </nav>
 <div [class.content-expand]='nav_state === "closed"' class='content'>
