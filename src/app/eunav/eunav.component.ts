@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 class EuLink {
   link: string;
@@ -45,11 +45,15 @@ export class EuNavComponent {
     new EuButton('Climbing'),
   ];
   nav_state = 'open';
+  @HostListener('window:scroll') test() {
+    let t = document.getElementById('editor')
+    console.log(t.offsetTop)
+    console.log(window.pageYOffset)
+  }
   toggle_nav() {
     this.nav_state = (this.nav_state === 'open' ? 'closed' : 'open');
   }
   eubutton_click(event: any) {
     event.stopPropagation();
-    console.log(this);
   }
 }
