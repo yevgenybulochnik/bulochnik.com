@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 class EuLink {
   link: string;
@@ -49,6 +49,18 @@ export class EuNavComponent {
     let t = document.getElementById('editor')
     console.log(t.offsetTop)
     console.log(window.pageYOffset)
+  }
+  ngOnInit() {
+    let scrollable_links = []
+    for (let i = 0; i < this.eubuttons.length; i++) {
+      scrollable_links.push(this.eubuttons[i].link.toLowerCase())
+      if (this.eubuttons[i].sublink) {
+        for (let n = 0; n < this.eubuttons[i].sublink.length; n++) {
+          scrollable_links.push(this.eubuttons[i].sublink[n].link.toLowerCase())
+        }
+      }
+    }
+    console.log(scrollable_links)
   }
   toggle_nav() {
     this.nav_state = (this.nav_state === 'open' ? 'closed' : 'open');
