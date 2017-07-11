@@ -44,11 +44,14 @@ export class EuNavComponent {
     new EuButton('Photography', ['Nature', 'Landscape', 'Portrait']),
     new EuButton('Climbing'),
   ];
+  scroll_positions: object;
   nav_state = 'open';
-  @HostListener('window:scroll') test() {
-    let t = document.getElementById('editor')
-    console.log(t.offsetTop)
-    console.log(window.pageYOffset)
+  @HostListener('window:scroll') onScroll() {
+    let window_position = window.pageYOffset
+    console.log(window_position)
+    for (let button in this.scroll_positions) {
+      console.log(button, this.scroll_positions[button])
+    }
   }
   ngOnInit() {
     let scrollable_links = []
@@ -56,11 +59,17 @@ export class EuNavComponent {
       scrollable_links.push(this.eubuttons[i].link.toLowerCase())
       if (this.eubuttons[i].sublink) {
         for (let n = 0; n < this.eubuttons[i].sublink.length; n++) {
-          scrollable_links.push(this.eubuttons[i].sublink[n].link.toLowerCase())
+          scrollable_links.push(this.eubuttons[i].sublink[n].link.toLowerCase().replace(' ', ''))
         }
       }
     }
-    console.log(scrollable_links)
+    let link_dict = {}
+    for (let i = 0; i < scrollable_links.length; i++) {
+      if (document.getElementById(scrollable_links[i])) {
+        link_dict[scrollable_links[i]] = document.getElementById(scrollable_links[i]).offsetTop
+      }
+    }
+    this.scroll_positions = link_dict
   }
   toggle_nav() {
     this.nav_state = (this.nav_state === 'open' ? 'closed' : 'open');
