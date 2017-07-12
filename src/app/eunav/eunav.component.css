@@ -37,6 +37,11 @@
   color: white;
 }
 
+.active {
+  background: black;
+  color: white;
+}
+
 .eubutton {
   font-family: impact;
   font-size: 1.5em;
