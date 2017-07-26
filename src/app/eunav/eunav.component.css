@@ -21,25 +21,19 @@
   left: -11em;
 }
 
-.eubutton-wrapper {
-  transition: 1s;
-}
-
 .eubutton-wrapper:hover {
   background: black;
-}
-
-.eubutton-wrapper:hover .eubutton {
-  color: white;
-}
-
-.eubutton-wrapper:hover .subbutton {
   color: white;
 }
 
 .active {
   background: black;
   color: white;
+}
+
+.active .subbutton {
+  opacity: 1;
+  height: 1.2em;
 }
 
 .eubutton {
