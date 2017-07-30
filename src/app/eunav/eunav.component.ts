@@ -6,6 +6,7 @@ class EuLink {
   link_id: string;
   is_active = false;
   scroll_position: number;
+  parent: any;
   constructor(linkname: string) {
     this.link = linkname;
     this.link_path = '/' + linkname.toLowerCase().replace(' ', '');
@@ -29,7 +30,9 @@ class EuButton extends EuLink {
     if (sublinks) {
       let sublink_array = [];
       for (let i = 0; i < sublinks.length; i++) {
-        sublink_array.push( new EuLink(sublinks[i]) )
+        let placeholder = new EuLink(sublinks[i])
+        placeholder.parent = this
+        sublink_array.push(placeholder)
       }
       return sublink_array
     } else {
@@ -52,11 +55,37 @@ export class EuNavComponent {
     new EuButton('Climbing'),
   ];
   nav_state = 'open';
-  window_position: number;
   @HostListener('window:scroll') onScroll() {
     let window_position = window.pageYOffset
-    console.log(window_position)
-    this.window_position = window_position
+    let eubuttons_ref = []
+    let eubuttons_scrollPositions = []
+    for (let i = 0; i < this.eubuttons.length; i++) {
+      eubuttons_ref.push(this.eubuttons[i])
+      if (this.eubuttons[i].scroll_position) {
+        eubuttons_scrollPositions.push(this.eubuttons[i].scroll_position)
+      }
+      if (this.eubuttons[i].sublink) {
+        for (let n = 0; n < this.eubuttons[i].sublink.length; n++) {
+          eubuttons_ref.push(this.eubuttons[i].sublink[n])
+          if (this.eubuttons[i].sublink[n].scroll_position) {
+            eubuttons_scrollPositions.push(this.eubuttons[i].sublink[n].scroll_position)
+          }
+        }
+      }
+    }
+    for (let i = 0; i < eubuttons_scrollPositions.length; i++) {
+      if (window_position < eubuttons_scrollPositions[i + 1] && window_position >= eubuttons_scrollPositions[i]) {
+        eubuttons_ref[i].is_active = true
+        if (eubuttons_ref[i].parent) {
+          eubuttons_ref[i].parent.is_active = true
+        }
+      }else {
+        eubuttons_ref[i].is_active = false
+      }
+    }
+    //console.log(eubuttons_ref)
+    //console.log(eubuttons_scrollPositions)
+    //console.log(window_position)
   }
   ngOnInit() {
     for (let i = 0; i < this.eubuttons.length; i++) {
@@ -67,12 +96,27 @@ export class EuNavComponent {
         }
       }
     }
-    console.log(this.eubuttons)
   }
   toggle_nav() {
     this.nav_state = (this.nav_state === 'open' ? 'closed' : 'open');
   }
-  eubutton_click(event: any) {
+  reset_buttons() {
+    for (let i = 0; i < this.eubuttons.length; i++) {
+      this.eubuttons[i].is_active = false
+      if (this.eubuttons[i].sublink) {
+        for (let n = 0; n < this.eubuttons[i].sublink.length; n++) {
+          this.eubuttons[i].sublink[n].is_active = false
+        }
+      }
+    }
+    console.log(this)
+  }
+  eubutton_click(event: any, button: EuButton, subbutton?: EuLink) {
+    this.reset_buttons()
+    button.is_active = !button.is_active
+    if (subbutton) {
+      subbutton.is_active = !subbutton.is_active
+    }
     event.stopPropagation();
   }
 }
