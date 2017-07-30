@@ -30,9 +30,9 @@ class EuButton extends EuLink {
     if (sublinks) {
       let sublink_array = [];
       for (let i = 0; i < sublinks.length; i++) {
-        let placeholder = new EuLink(sublinks[i])
-        placeholder.parent = this
-        sublink_array.push(placeholder)
+        let eulink_ref = new EuLink(sublinks[i])
+        eulink_ref.parent = this
+        sublink_array.push(eulink_ref)
       }
       return sublink_array
     } else {
