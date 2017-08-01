@@ -56,7 +56,15 @@ export class EuNavComponent {
   ];
   nav_state = 'open';
   @HostListener('window:scroll') onScroll() {
-    let window_position = window.pageYOffset
+    for (let i = 0; i < this.eubuttons.length; i++) {
+      this.eubuttons[i].get_scrollPosition()
+      if (this.eubuttons[i].sublink) {
+        for (let n = 0; n < this.eubuttons[i].sublink.length; n++) {
+          this.eubuttons[i].sublink[n].get_scrollPosition()
+        }
+      }
+    }
+    let window_position = window.pageYOffset + 20
     let eubuttons_ref = []
     let eubuttons_scrollPositions = []
     for (let i = 0; i < this.eubuttons.length; i++) {
@@ -86,16 +94,6 @@ export class EuNavComponent {
     //console.log(eubuttons_ref)
     //console.log(eubuttons_scrollPositions)
     //console.log(window_position)
-  }
-  ngOnInit() {
-    for (let i = 0; i < this.eubuttons.length; i++) {
-      this.eubuttons[i].get_scrollPosition()
-      if (this.eubuttons[i].sublink) {
-        for (let n = 0; n < this.eubuttons[i].sublink.length; n++) {
-          this.eubuttons[i].sublink[n].get_scrollPosition()
-        }
-      }
-    }
   }
   toggle_nav() {
     this.nav_state = (this.nav_state === 'open' ? 'closed' : 'open');
