@@ -62,12 +62,16 @@
 }
 
 .note-editor {
+  box-sizing: border-box;
+  border-top: solid black 1em;
+  border-bottom: solid black 1em;
   background-color: #0d3d56;
-  height: 30em;
+  padding: 1em 2em 2em 2em;
   color: #f0fff0;
 }
 
 .note-editor> h1 {
+  margin: 0;
   font-family: Impact;
-  padding: 1em 0 0 4em;
+  padding: 0 0 0 4em;
 }

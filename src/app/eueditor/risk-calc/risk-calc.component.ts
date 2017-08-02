@@ -14,7 +14,7 @@ import { RiskFactor } from './risk-calc.provider';
       display: flex;
       align-items: center;
       flex-direction: column;
-      width: 7em;
+      width: 6.5em;
       margin: 0.5em;
       padding: 0.7em;
       box-shadow: 0em 1em 2em 0em black;
