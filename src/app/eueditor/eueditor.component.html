@@ -1,6 +1,8 @@
-<div>
-  <risk-calc [calculator]='hasbled' (riskassessment)='get_assessment($event)'></risk-calc>
-  <risk-calc [calculator]='chadsvasc' (riskassessment)='get_assessment($event)'></risk-calc>
+<div class="eu-editor">
+  <div class="calc-container">
+    <risk-calc [calculator]='hasbled' (riskassessment)='get_assessment($event)'></risk-calc>
+    <risk-calc [calculator]='chadsvasc' (riskassessment)='get_assessment($event)'></risk-calc>
+  </div>
   <div class="editor-container">
     <quill-editor></quill-editor>
   </div>
