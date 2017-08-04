@@ -9,12 +9,14 @@ import { EuEditorComponent } from './eueditor/eueditor.component';
 import { RiskCalcComponent} from './eueditor/risk-calc/risk-calc.component';
 
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    Ng2PageScrollModule.forRoot()
+    Ng2PageScrollModule.forRoot(),
+    QuillModule
   ],
   declarations: [
     AppComponent,
