@@ -2,4 +2,9 @@
 
 This repository houses my personal website. Built using Angular 2. Currently a work in progress.
 
-### Web Development Tools 
+### Web Development Tools
+
+### Dependencies 
+
+* Ng2-page-scroll
+* Ngx-Quill 
