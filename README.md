@@ -6,5 +6,5 @@ This repository houses my personal website. Built using Angular 2. Currently a w
 
 ### Dependencies 
 
-* Ng2-page-scroll
-* Ngx-Quill 
+* [Ng2-page-scroll](https://github.com/Nolanus/ng2-page-scroll)
+* [Ngx-Quill](https://github.com/KillerCodeMonkey/ngx-quill) 
