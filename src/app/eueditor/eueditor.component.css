@@ -1,10 +1,15 @@
 .eu-editor {
   display: flex;
 }
+
 .editor-container {
   background: white;
   color: black;
+  border: solid 1px #ccc;
   box-shadow: 0em 1em 2em 0em black;
   margin: 0.5em 0.5em 0.5em 0.2em;
 }
 
+risk-calc {
+  border: solid 1px #ccc;
+}
