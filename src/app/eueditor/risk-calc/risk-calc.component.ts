@@ -43,6 +43,9 @@ import { RiskFactor } from './risk-calc.provider';
       background: red;
       width: 8em;
     }
+    .active:hover {
+      background: red;
+    }
     `]
 })
 
