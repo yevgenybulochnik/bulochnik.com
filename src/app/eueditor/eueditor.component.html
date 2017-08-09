@@ -4,6 +4,6 @@
     <risk-calc [calculator]='chadsvasc' (riskassessment)='get_assessment($event)'></risk-calc>
   </div>
   <div class="editor-container">
-    <quill-editor></quill-editor>
+    <quill-editor [modules]='toolbarButtons'></quill-editor>
   </div>
 </div>
