@@ -110,7 +110,7 @@ export class EuNavComponent {
     console.log(this)
   }
   eubutton_click(event: any, button: EuButton, subbutton?: EuLink) {
-    this.reset_buttons()
+    //this.reset_buttons()
     button.is_active = !button.is_active
     if (subbutton) {
       subbutton.is_active = !subbutton.is_active
