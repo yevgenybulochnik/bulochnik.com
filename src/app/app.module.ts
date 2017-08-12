@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { EuNavComponent } from './eunav/eunav.component';
 import { EuEditorComponent } from './eueditor/eueditor.component';
-import { RiskCalcComponent} from './eueditor/risk-calc/risk-calc.component';
+import { RiskCalcComponent } from './eueditor/risk-calc/risk-calc.component';
+import { EuSubjectiveComponent } from './eueditor/eusubjective/eusubjective.component';
 
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { QuillModule } from 'ngx-quill';
@@ -22,7 +23,8 @@ import { QuillModule } from 'ngx-quill';
     AppComponent,
     EuNavComponent,
     EuEditorComponent,
-    RiskCalcComponent
+    RiskCalcComponent,
+    EuSubjectiveComponent
   ],
   providers: [
   ],
