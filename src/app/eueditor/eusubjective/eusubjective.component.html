@@ -1,0 +1,6 @@
+<div class="subj_button" *ngFor="let question of questions" [ngClass]="{'red':question.usr_input}">
+  <button (click)="usr_activate(question)" class = "subj_positive" [ngClass] = "{'red':question.usr_isclicked,'red':question.usr_input}">+</button>
+  <div class="subj_middle">{{question.text}}</div>
+  <button (click)="d_activate(question)" class = "subj_negative" [ngClass]="{'green':question.d_isclicked,'hide':question.usr_input}">-</button>
+  <textarea focusIn *ngIf="question.usr_isclicked" (blur)="gen_usr_input_strings(question)" [(ngModel)]="question.usr_input" class="subj_input" contenteditable="true">{{question.usr_input}}</textarea>
+</div>
