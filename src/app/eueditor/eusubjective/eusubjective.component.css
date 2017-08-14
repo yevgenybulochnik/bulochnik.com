@@ -53,7 +53,7 @@ button{
   height: 22px;
   padding-top: 3px;
   text-align: center;
-  transition; background-color 1s;
+  transition: background-color 1s;
 }
 .subj_negative{
   float: left;
