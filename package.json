@@ -4,7 +4,8 @@
   "description": "Angular2 app website",
   "main": "main.ts",
   "scripts": {
-    "serve": "./node_modules/.bin/webpack-dev-server"
+    "serve": "./node_modules/.bin/webpack-dev-server",
+    "serve-local": "./node_modules/.bin/webpack-dev-server --host 192.168.2.21"
   },
   "keywords": [],
   "author": "Yevgeny Bulochnik",
