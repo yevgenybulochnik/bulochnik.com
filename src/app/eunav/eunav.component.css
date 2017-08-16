@@ -22,7 +22,7 @@
 }
 
 .eubutton-wrapper {
-    transition: opacity 1s;
+  transition: opacity 1s;
 }
 
 .eubutton-wrapper:hover {
@@ -58,6 +58,7 @@
   font-size: 1.2em;
   opacity: 0;
   height: 0;
+  cursor: pointer;
   transition: 1s opacity, 0.5s height, 0.5s color;
 }
 
