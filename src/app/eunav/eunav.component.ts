@@ -10,10 +10,10 @@ class EuLink {
   constructor(linkname: string) {
     this.link = linkname;
     this.link_path = '/' + linkname.toLowerCase().replace(' ', '');
-    this.link_id = '#' + linkname.toLowerCase();
+    this.link_id = '#' + linkname.toLowerCase().replace(' ', '');
   }
   get_scrollPosition() {
-    let elem = document.getElementById(this.link.toLowerCase())
+    let elem = document.getElementById(this.link.toLowerCase().replace(' ', ''))
     if (elem) {
       this.scroll_position = elem.offsetTop
     }
@@ -110,11 +110,11 @@ export class EuNavComponent {
     console.log(this)
   }
   eubutton_click(event: any, button: EuButton, subbutton?: EuLink) {
-    this.reset_buttons()
-    button.is_active = !button.is_active
-    if (subbutton) {
-      subbutton.is_active = !subbutton.is_active
-    }
+    //this.reset_buttons()
+    //button.is_active = !button.is_active
+    //if (subbutton) {
+      //subbutton.is_active = !subbutton.is_active
+    //}
     event.stopPropagation();
   }
 }
