@@ -11,6 +11,7 @@ import { EuSubjectiveComponent } from './eueditor/eusubjective/eusubjective.comp
 
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { QuillModule } from 'ngx-quill';
+import { FocusDirective } from './eueditor/eusubjective/focus.directive';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { QuillModule } from 'ngx-quill';
     EuNavComponent,
     EuEditorComponent,
     RiskCalcComponent,
-    EuSubjectiveComponent
+    EuSubjectiveComponent,
+    FocusDirective
   ],
   providers: [
   ],

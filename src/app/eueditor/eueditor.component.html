@@ -1,12 +1,12 @@
 <div class="eu-editor">
   <div class="calc-container">
-    <risk-calc [calculator]='hasbled' (riskassessment)='get_assessment($event)'></risk-calc>
-    <risk-calc [calculator]='chadsvasc' (riskassessment)='get_assessment($event)'></risk-calc>
+    <risk-calc [calculator]='hasbled' (riskassessment)='get_hasbled($event)'></risk-calc>
+    <risk-calc [calculator]='chadsvasc' (riskassessment)='get_chadsvasc($event)'></risk-calc>
   </div>
   <div class="editor-container">
-    <quill-editor [modules]='toolbarButtons'></quill-editor>
+    <quill-editor (onEditorCreated)='setEditor($event)' [modules]='toolbarButtons'></quill-editor>
   </div>
   <div>
-    <subjective></subjective>
+    <subjective (subjective_list)='get_subjective_list($event)'></subjective>
   </div>
 </div>
